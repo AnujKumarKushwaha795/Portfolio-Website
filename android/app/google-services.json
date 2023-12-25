@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "338821569675",
+    "project_id": "save-memories-855b7",
+    "storage_bucket": "save-memories-855b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338821569675:android:db9114fae649e46b9f488e",
+        "android_client_info": {
+          "package_name": "com.example.portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338821569675-f70nktnqsidoncgs46jfo2u877t88hdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD77f1kAeA8icYc38N1EZ3cBjdQPvJvNwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338821569675-f70nktnqsidoncgs46jfo2u877t88hdq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
