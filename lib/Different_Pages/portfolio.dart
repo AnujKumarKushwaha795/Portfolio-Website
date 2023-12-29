@@ -101,12 +101,14 @@ class _PortfolioState extends State<Portfolio> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              decoration: const BoxDecoration(
+              decoration:const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('back_imp2.jpg'),
+                  image: AssetImage('assets/back_imp2.jpg'),
                   fit: BoxFit.cover
                 ),
               ),
+
+
               child: Column(
                 children: [
                    Wrap(

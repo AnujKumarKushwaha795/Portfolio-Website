@@ -1,3 +1,5 @@
+import 'package:firebase_storage/firebase_storage.dart';
+
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,6 +16,8 @@ late final String chatAppLink;
 late final String galleryAppScreenshot;
 late final String portfolioScreenshot;
 late final String chatAppScreenshot;
+late final String backImage1;
+late final String backImage2;
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,6 +63,10 @@ void getLinks()async{
         portfolioScreenshot=links!['portfolioScreenshot'];
         chatAppScreenshot=links!['chatAppScreenshot'];
 
+        // backImage1=links!['back_img1'];
+        // backImage2=links!['back_img2'];
+        // log(backImage1);
+        // log(backImage2);
         // log("$nptelLink $resumeLink $galleryAppLink $portfolioLink $chatAppLink");
         // log("$galleryAppScreenshot $portfolioScreenshot $chatAppScreenshot");
      }
@@ -71,6 +79,8 @@ void getLinks()async{
     // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
   }
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -93,6 +103,29 @@ class MyApp extends StatelessWidget {
 }
 
 
+Future<List<String>> getAllImageUrls() async {
+  try {
+    final ListResult result = await FirebaseStorage.instance.ref().child('image').listAll();
+    log(result.toString());
+    List<String> imageUrls = [];
+
+    // Loop through all items (files) in the 'images' folder
+    for (final Reference ref in result.items) {
+      // Get the download URL for each image file
+      String downloadUrl = await ref.getDownloadURL();
+      imageUrls.add(downloadUrl);
+      log(downloadUrl);
+    }
+
+    return imageUrls; // Return a list of download URLs for all images
+  } catch (e) {
+    // Handle any potential exceptions here
+    print('Error getting image URLs: $e');
+    return [];
+  }
+}
+
+
 /*
 --web-renderer html
 Showing image on web
@@ -103,3 +136,12 @@ Windows/Linux:
 Reformat Code: Ctrl + Alt + L
 Optimize Imports: Ctrl + Alt + O
  */
+
+/*
+HOSTING WEBSITE
+flutter login
+flutter build web
+firebase init hosting
+firebase deploy
+firebase hosting:channel:deploy "CHANNEL_ID"
+*/

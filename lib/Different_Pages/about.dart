@@ -71,7 +71,8 @@ class _AboutState extends State<About> {
                 width: 2, // Border width
               ),
               image: const DecorationImage(
-                image: AssetImage('back_img1.jpg'),
+                image: AssetImage('assets/back_img1.jpg'),
+                // image: NetworkImage("back_img1.jpg"),
                 // Replace 'your_image.png' with the image path
                 fit: BoxFit.cover,
                 // Adjusts how the image fits within the container
@@ -96,11 +97,11 @@ class _AboutState extends State<About> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "A third-year Computer Science student at NIT Patna. Passionate about technology, I've explored various fields including Flutter, Firebase, and data structures in C++ and Python.",
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                      color: Colors.yellow.shade500,
+                      color: Colors.black,
                       fontSize: 14.0,
                       fontWeight: FontWeight.w600,
                     ),
